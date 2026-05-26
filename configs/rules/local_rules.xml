@@ -1,0 +1,18 @@
+<group name="linux,authentication,media_store,">
+
+  <rule id="110001" level="10">
+    <if_sid>5716</if_sid>
+    <match>authentication failure|Failed password</match>
+    <description>SIEM ALERT: Sustained SSH Brute-Force Signature Detected on Production Gateway.</description>
+    <mitigation>Triggering automated host-containment API active response loop.</mitigation>
+    <group>authentication_failed,brute_force,devsecops_remediation</group>
+  </rule>
+
+  <rule id="110002" level="12">
+    <if_sid>5402</if_sid>
+    <match>failed test|unauthorized sudo request</match>
+    <description>CRITICAL ALERT: Unauthorized sudo privilege escalation execution attempt bypassed system boundaries.</description>
+    <group>privilege_escalation,security_drift</group>
+  </rule>
+
+</group>
